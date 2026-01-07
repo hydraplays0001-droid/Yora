@@ -1,5 +1,5 @@
-from utils.Functions.viewTask import viewTasks
-from utils.Functions.intial import intial
+from utils.Functions.choice import userChoice
 from os import system
 
 system("clear")
+userChoice()

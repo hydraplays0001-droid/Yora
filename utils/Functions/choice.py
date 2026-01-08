@@ -13,22 +13,27 @@ def userChoice():
     print("'5' To Exit.")
 
     while True:
-        choice = input("Enter your choice: ")
+        try:
+            choice = input("Enter your choice: ")
 
-        if choice == "1":
-            sleep(1.5)
-            viewTasks()
-        elif choice == "2":
-            addTask()
-        elif choice == "3":
-            pass
-        elif choice == "4":
-            pass
-        elif choice == "5":
-            print("Thanks For Coming Here. ")
+            if choice == "1":
+                sleep(1.5)
+                viewTasks()
+            elif choice == "2":
+                addTask()
+            elif choice == "3":
+                pass
+            elif choice == "4":
+                pass
+            elif choice == "5":
+                print("Thanks For Coming Here. ")
+                break
+            else:
+                print("Invalid choice!")
+        except KeyboardInterrupt as _:
+            print("")
+            print("Exiting Program!")
             break
-        else:
-            print("Invalid choice!")
 
 
 if __name__ == "__main__":

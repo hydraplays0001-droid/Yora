@@ -1,4 +1,6 @@
+from utils.Functions.deleteTask import delete_task
 from utils.Functions.viewTask import viewTasks
+from utils.Functions.addTask import addTask
 
 
 def userChoice():
@@ -16,12 +18,12 @@ def userChoice():
         if choice == "1":
             viewTasks()
         elif choice == "2":
-            pass
+            addTask()
         elif choice == "3":
-            pass
+            delete_task()
         elif choice == "4":
             pass
-        elif choice == "5":
+        elif choice == "5" or choice == "exit":
             print("Thanks For Coming Here. ")
             break
         else:

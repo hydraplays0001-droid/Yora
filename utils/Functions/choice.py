@@ -20,7 +20,7 @@ def userChoice():
             elif choice == "2":
                 addTask()
             elif choice == "3":
-                pass
+                delete_task()
             elif choice == "4":
                 pass
             elif choice == "5":
@@ -32,7 +32,7 @@ def userChoice():
                 break
             else:
                 print("Invalid choice!")
-    except KeyboardInterrupt as _:
+    except KeyboardInterrupt:
         print("")
         print("Exiting Program!")
     except ValueError:

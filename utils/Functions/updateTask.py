@@ -1,4 +1,4 @@
-tasks = {"asfd": True, "ghlkja": False}
+from utils.shared.shared import tasks
 
 
 def updateTask():

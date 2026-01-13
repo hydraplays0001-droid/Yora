@@ -1,4 +1,5 @@
 from utils.shared.shared import tasks
+from time import sleep
 
 
 def updateTask():
@@ -36,6 +37,7 @@ def updateTask():
                             # change dictionary key
                             del tasks[old_key]
                             tasks[context] = old_value
+                            sleep(2)
 
                             print("Task context updated successfully!")
                             break
@@ -65,6 +67,7 @@ def updateTask():
 
                         key_list_of_tasks = list(tasks.keys())
                         tasks[key_list_of_tasks[userInput]] = status == "True"
+                        sleep(2)
 
                         print("Task status updated successfully!")
                         break

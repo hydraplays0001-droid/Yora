@@ -11,9 +11,9 @@ from utils.shared.shared import tasks
 
 def addTask():
     Task: str = input("Enter Your Task: ")
-    sleep(2)
     dictionary: dict[str, bool] = {Task: False}
     tasks.update(dictionary)
+    sleep(2)
     print("Added Task Successfully! ")
 
 

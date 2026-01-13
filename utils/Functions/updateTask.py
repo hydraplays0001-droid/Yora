@@ -16,26 +16,29 @@ def updateTask():
 
                 while True:
                     try:
-                        userInput = int(
-                            input(
-                                "Enter the index number to change its context value: "
+                        if not tasks:
+                            print("Your Tasks Are Empty! ")
+                        else:
+                            userInput = int(
+                                input(
+                                    "Enter the index number to change its context value: "
+                                )
                             )
-                        )
 
-                        context = input(
-                            "Write the context that you want to change to: "
-                        )
+                            context = input(
+                                "Write the context that you want to change to: "
+                            )
 
-                        key_list_of_tasks = list(tasks.keys())
-                        old_key = key_list_of_tasks[userInput]
-                        old_value = tasks[old_key]
+                            key_list_of_tasks = list(tasks.keys())
+                            old_key = key_list_of_tasks[userInput]
+                            old_value = tasks[old_key]
 
-                        # change dictionary key
-                        del tasks[old_key]
-                        tasks[context] = old_value
+                            # change dictionary key
+                            del tasks[old_key]
+                            tasks[context] = old_value
 
-                        print("Task context updated successfully!")
-                        break
+                            print("Task context updated successfully!")
+                            break
 
                     except IndexError:
                         print("Invalid index number!")

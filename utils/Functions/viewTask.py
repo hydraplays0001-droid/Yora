@@ -4,6 +4,7 @@ from time import sleep
 
 def viewTasks():
     if not tasks:
+        sleep(2)
         print("Your tasks are empty! ")
     else:
         sleep(1.4)

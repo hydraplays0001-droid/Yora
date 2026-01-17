@@ -1,6 +1,7 @@
 import re
 from UserInfo import UserInfo
 
+pattern = r"^[A-Za-z0-9_%#]+(\.[A-Za-z0-9_%#]+)?+@[A-Za-z0-9_%#]+\.(edu|com)$"
 print("Want to create an account? Press Y to create the account.")
 print("Press N if you already have an existing account.")
 
@@ -11,14 +12,16 @@ try:
         if choice == "y":
             UserInfo()
             print(
-                "Continue To With Google 🇬, Apple 🍎, Microsoft 🪟, Facebook 𝐟 , Steam 💨, Twitter 𝕏"
+                "\nContinue To With Google 🇬, Apple 🍎, Microsoft 🪟, Facebook 𝐟 , Steam 💨, Twitter 𝕏\n"
             )
-            break
+            account = input("Enter Your Account That You Want To Continue With: ")
+            if re.fullmatch(pattern, account):
+                with open("userDatabase/accounts.txt", "a") as file:
+                    file.write(f"{account}\n")
+            else:
+                print("Invalid Email! ")
         elif choice == "n":
             account = input("Enter Your Existing Account: ")
-            pattern = (
-                r"^[A-Za-z0-9_%#]+(\.[A-Za-z0-9_%#]+)?+@[A-Za-z0-9_%#]+\.(edu|com)$"
-            )
             if re.fullmatch(pattern, account):
                 if account in open("userDatabase/accounts.txt"):
                     print("Welcome ")

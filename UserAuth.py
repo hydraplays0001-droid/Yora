@@ -1,4 +1,5 @@
 import re
+from UserInfo import UserInfo
 
 print("Want to create an account? Press Y to create the account.")
 print("Press N if you already have an existing account.")
@@ -8,6 +9,7 @@ try:
         choice = input("Enter your choice (Y/N): ").lower().strip()
 
         if choice == "y":
+            UserInfo()
             print(
                 "Continue To With Google 🇬, Apple 🍎, Microsoft 🪟, Facebook 𝐟 , Steam 💨, Twitter 𝕏"
             )

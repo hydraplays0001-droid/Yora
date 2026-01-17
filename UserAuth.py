@@ -18,7 +18,10 @@ try:
                 r"^[A-Za-z0-9_%#]+(\.[A-Za-z0-9_%#]+)?+@[A-Za-z0-9_%#]+\.(edu|com)$"
             )
             if re.fullmatch(pattern, account):
-                print("Valid")
+                if account in open("userDatabase/accounts.txt"):
+                    print("Welcome ")
+                else:
+                    print("Email Not Found! ")
             else:
                 print("Invalid! ")
         else:

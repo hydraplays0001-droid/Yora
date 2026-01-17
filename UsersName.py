@@ -4,22 +4,28 @@ import string
 
 
 def UsersName():
-    length = random.randint(1, 20)
+    # Ensure directory exists
+    directory = "UsersName"
+    os.makedirs(directory, exist_ok=True)
 
-    # Generate a random number string of that length
+    # Generate random number length (1–20 digits)
+    length = random.randint(1, 20)
     random_number = "".join(random.choices(string.digits, k=length))
 
     filename = f"{random_number}.txt"
+    filepath = os.path.join(directory, filename)
 
-    os.open(filename, os.O_CREAT | os.O_WRONLY)
+    first_name = input("Enter Your First Name: ").strip()
+    last_name = input("Enter Your Last Name (Optional): ").strip()
 
-    first_name = input("Enter Your First Name: ")
-    last_name = input("Enter Your Last Name (Optional): ")
-    if last_name is None:
-        last_name = ""
+    # Write to file
+    with open(filepath, "w") as file:
+        if last_name:
+            file.write(f"{first_name} {last_name}")
+        else:
+            file.write(first_name)
 
-    with open(f"UsersName/{filename}", "w") as file:
-        file.write(f"{first_name} {last_name}")
+    print(f"File created at: {filepath}")
 
 
 if __name__ == "__main__":

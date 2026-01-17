@@ -32,6 +32,7 @@ def auth():
                     if account in open("userDatabase/accounts.txt"):
                         print("\nWelcome! \n")
                         userChoice()
+                        break
                     else:
                         print("Email Not Found! ")
                 else:

@@ -3,7 +3,7 @@ import os
 import string
 
 
-def UserInfo():
+def UsersName():
     length = random.randint(1, 20)
 
     # Generate a random number string of that length
@@ -23,4 +23,4 @@ def UserInfo():
 
 
 if __name__ == "__main__":
-    UserInfo()
+    UsersName()

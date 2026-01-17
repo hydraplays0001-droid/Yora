@@ -1,7 +1,7 @@
 import re
 from time import sleep
 from utils.Functions.choice import userChoice
-from UserInfo import UserInfo
+from UsersName import UsersName
 
 
 def auth():
@@ -14,7 +14,7 @@ def auth():
             choice = input("Enter your choice (Y/N): ").lower().strip()
 
             if choice == "y":
-                UserInfo()
+                UsersName()
                 print(
                     "\nContinue To With Google 🇬, Apple 🍎, Microsoft 🪟, Facebook 𝐟 , Steam 💨, Twitter 𝕏\n"
                 )
